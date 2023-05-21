@@ -2,6 +2,7 @@ package com.grupoG33.reto3.service;
 
 import com.grupoG33.reto3.dbo.CarDbo;
 import com.grupoG33.reto3.model.CarModel;
+import com.grupoG33.reto3.model.ClientModel;
 import com.grupoG33.reto3.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -63,4 +64,7 @@ public class CarService {
         }
     }
 
+    public Optional<CarModel> obtenerPorId(int id) {
+        return carRepository.findById(id);
+    }
 }

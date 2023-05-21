@@ -52,4 +52,8 @@ public class MessageService {
 
 
     }
+
+    public Optional<MessageModel> obtenerPorId(int id) {
+        return messageRepository.findById(id);
+    }
 }

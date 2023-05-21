@@ -3,6 +3,7 @@ package com.grupoG33.reto3.service;
 import com.grupoG33.reto3.dbo.GamaDbo;
 import com.grupoG33.reto3.model.CarModel;
 import com.grupoG33.reto3.model.GamaModel;
+import com.grupoG33.reto3.repository.ClientRepository;
 import com.grupoG33.reto3.repository.GamaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ public class GamaService {
 
     @Autowired
     GamaRepository gamaRepository;
+
+
 
     public List<GamaModel> obtener(){
         return gamaRepository.findAll();
@@ -45,5 +48,9 @@ public class GamaService {
             }
             gamaRepository.save(gama);
         }
+    }
+
+    public Optional<GamaModel> obtenerPorId(int id) {
+        return gamaRepository.findById(id);
     }
 }

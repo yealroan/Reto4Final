@@ -40,4 +40,8 @@ public class ScoreService {
             scoreRepository.save(score);
         }
     }
+
+    public Optional<ScoreModel> obtenerPorId(int id) {
+        return scoreRepository.findById(id);
+    }
 }
