@@ -31,5 +31,6 @@ public class ClientModel {
     private List<MessageModel> messages;
 
     @OneToMany(cascade = CascadeType.MERGE,mappedBy = "client")
+    @JsonIgnoreProperties({"reservations","messages"})
     private List<ReservationModel> reservations;
 }
