@@ -4,6 +4,7 @@ import com.grupoG33.reto3.dbo.AdminDbo;
 import com.grupoG33.reto3.model.AdminModel;
 import com.grupoG33.reto3.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class AdminController {
         }
 
     @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public  void eliminar(@PathVariable int id){
        adminService.eliminar(id);
     }
